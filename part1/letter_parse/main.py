@@ -18,8 +18,11 @@ letters = [
 
 def get_plates(letters):
     # TODO напишите ваш код здесь
-    pass
-
+    for item in letters:
+        for p in re.findall(r"[а-я]\d{3}[а-я]{2}\d{2,3}", item):
+            yield p
+        for p in re.findall(r"[а-я]{2}\d{3}_\d{2,3}", item):
+            yield p
 
 if __name__ == "__main__":
     print([x for x in get_plates(letters)])

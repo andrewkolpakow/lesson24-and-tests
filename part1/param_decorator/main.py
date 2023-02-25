@@ -6,10 +6,23 @@
 from functools import wraps
 
 
-def retry():
+def retry(n):
     # TODO напишите код декоратора здесь
-    pass
+    def decor(func):
+        @wraps(func)
+        def _wrapper(*args, **kwargs):
+            counter = 0
+            while True:
+                try:
+                    return func(*args, **kwargs)
+                except Exception as e:
+                    print("exc_has_appeared")
+                    counter += 1
+                    if counter > n:
+                        raise e
 
+        return _wrapper
+    return decor
 
 # Код для самопроверки
 class Counter:

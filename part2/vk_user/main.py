@@ -43,9 +43,23 @@ vk_data = {
 # TODO определите классы OnlineInfo, Occupation и University.
 
 @dataclass
+class Occupation:
+    id: int
+    type: str
+
+@dataclass
+class OnlineInfo:
+    visible: bool
+    last_seen: int
+@dataclass
 class User:
     # TODO дополните класс User
-    pass
+    id: int
+    first_name: str
+    last_name: str
+    online_info: OnlineInfo
+    occupation: Dict[str, Occupation]
+    universities: List[University]
 
 
 @dataclass

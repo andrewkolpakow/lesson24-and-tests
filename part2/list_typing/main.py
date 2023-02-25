@@ -5,6 +5,6 @@
 # всех элементов массива.
 # Для успешного прохождения тестов
 # при написании аннотаций используйте, пожалуйста, библиотеку typing
-
-def sum_arr(arr):
+from typing import List
+def sum_arr(arr: List[int]) -> int :
     return sum(arr)

@@ -13,8 +13,7 @@ class Point:
 
 
 def point_factory(n: int) -> List[Point]:
-    # TODO напишите Ваш код здесь
-    pass
+    return [Point(i + 1, i + 1) for i in range(n)]
 
 
 if __name__ == "__main__":
